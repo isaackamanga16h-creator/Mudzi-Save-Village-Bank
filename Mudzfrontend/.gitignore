@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+build/
+
+# Local env files & cache
+.env
+.env.local
+.vite/
+.DS_Store
