@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { getGroups, createGroup, getGroupDashboard } from '../api/service.jsx';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';

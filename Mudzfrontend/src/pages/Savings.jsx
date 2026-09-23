@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import Navbar from '../components/navbar.jsx';
+import Navbar from '../components/Navbar.jsx';
 import { getGroupMembers, recordSavings } from '../api/service.jsx';
 
 export default function Saving() {
