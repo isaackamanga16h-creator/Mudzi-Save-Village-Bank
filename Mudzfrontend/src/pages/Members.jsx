@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar.jsx';
-import MemberProfileModal from '../components/memberprofilemodal.jsx';
+import MemberProfileModal from '../components/MemberProfileModal.jsx';
 import { 
   getGroupMembers, 
   addMember, 
