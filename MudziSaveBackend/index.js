@@ -13,23 +13,25 @@ const { Pool } = require('pg');  // PostgreSQL client for Node.js
 // Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 5000;
-const JWT_SECRET = process.env.JWT_SECRET || 'mudzisave_hackathon_secret_2026';// Secret key for signing JWT tokens
+const JWT_SECRET = process.env.JWT_SECRET || 'mudzisave_hackathon_secret_2026'; // Secret key for signing JWT tokens
 
 
-
-// POSTGRESQL CONNECTION SETUP
-  const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',          // Postgres username
-  host: process.env.DB_HOST || 'localhost',        //  host
-  database: process.env.DB_NAME || 'MudziSave_db',   // database name
-  password: process.env.DB_PASSWORD,  // Postgres password
-  port: process.env.DB_PORT || 5432,                 // Default Postgres port
+// POSTGRESQL CONNECTION SETUP (UPDATED FOR SUPABASE)
+const pool = new Pool({
+  // This automatically handles user, host, database, password, and port from your URL string!
+  connectionString: process.env.DATABASE_URL, 
+  ssl: {
+    rejectUnauthorized: false // Mandated by Supabase to encrypt traffic securely
+  }
 });
 
 // Verify connection on startup
 pool.connect((err) => {
-  if (err) console.error('Database connection error:', err.stack);
-  else console.log('Successfully connected to PostgreSQL database for MudziSave!');
+  if (err) {
+    console.error('Database connection error:', err.stack);
+  } else {
+    console.log('Successfully connected to Supabase PostgreSQL database for MudziSave!');
+  }
 });
 
 // Middleware
