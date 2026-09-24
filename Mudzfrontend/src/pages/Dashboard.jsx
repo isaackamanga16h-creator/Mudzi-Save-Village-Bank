@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar.jsx';
 import { getGroups, createGroup, getGroupDashboard } from '../api/service.jsx';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+//import API from '../api/axios'; 
 
 export default function Dashboard() {
   const [groups, setGroups] = useState([]);
@@ -50,7 +51,7 @@ export default function Dashboard() {
   const loadGroupMembers = async (groupId) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get(`http://localhost:5000/api/groups/${groupId}/members`, {
+      const response = await axios.get(`${BASE_URL}/api/groups/${groupId}/members`, {
         headers: { Authorization: token ? `Bearer ${token}` : '' }
       });
       setGroupMembers(response.data || []);
@@ -86,7 +87,7 @@ export default function Dashboard() {
       if (repayData.loan_id) payload.loan_id = parseInt(repayData.loan_id, 10);
 
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/repayments', payload, {
+      await axios.post(`${BASE_URL}/api/repayments`, payload, {
         headers: { Authorization: token ? `Bearer ${token}` : '' }
       });
 
