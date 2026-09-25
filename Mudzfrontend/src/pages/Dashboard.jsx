@@ -4,8 +4,7 @@ import { getGroups, createGroup, getGroupDashboard } from '../api/service.jsx';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const baseURL = 'https://onrender.com';
-
+const baseURL = 'https://mudzisavebackend.onrender.com';
 
 export default function Dashboard() {
   const [groups, setGroups] = useState([]);
