@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://mudzisavebackend.onrender.com',
+  baseURL: 'https://mudzisavebackend.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },

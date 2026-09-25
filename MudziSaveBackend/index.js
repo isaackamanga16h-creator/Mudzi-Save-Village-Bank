@@ -1,7 +1,4 @@
 
-//CORE FRAMEWORK & MIDDLEWARE
-// Express framework for building the REST API routing architecture
-
 //import express from 'express';
 const express = require('express');
 require('dotenv').config(); // Load environment variables from .env
